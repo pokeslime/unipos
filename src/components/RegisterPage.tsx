@@ -5,7 +5,7 @@ import { useState, ChangeEvent } from 'react';
 
 export const RegisterPage = () => {
   const id = ulid()
-  const url = "" //To be filled
+  const url = "http://localhost:8000" //To be filled
   const userUrl = url + "/user";
   const [name, setName] = useState<string>("")
   const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
@@ -14,7 +14,7 @@ export const RegisterPage = () => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const result = await fetch("userUrl", {
+      const result = await fetch(userUrl, {
         method: "POST",
         body: JSON.stringify({
           UserId: id,
@@ -31,10 +31,10 @@ export const RegisterPage = () => {
     localStorage.setItem("userId",id)
     localStorage.setItem("name",name)
   };
-  
+
   return (
     <div>
-        <h1>Register</h1>
+        <h1 style={{ color: "#0000ff" }}>Register</h1>
         <form style={{ display: "flex", flexDirection: "column" }} onSubmit={onSubmit}>
           <label>Name:</label>
           <input

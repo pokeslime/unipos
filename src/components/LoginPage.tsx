@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 
 export const LoginPage = () => {
 
-    const url= "" //To be filled
+    const url= "http://localhost:8000" //To be filled
     const userUrl = url + "/user"
     const[users,setUsers] = useState<User[]>([])
     
@@ -19,7 +19,7 @@ export const LoginPage = () => {
     }
     return (
       <>
-      <h1>ログイン</h1>
+      <h1 style={{ color: "#0000ff" }}>ログイン</h1>
       {users.map((u)=>(
         <div key={u.UserId}>
           <form>
@@ -27,6 +27,9 @@ export const LoginPage = () => {
           </form>
         </div>
       ))}
+      <form>
+          <Button href="/home" id="ゲスト" onClick={(e:any) => handleChange(e)} >ゲスト 選択</Button>
+      </form>
       </>
     )
   }

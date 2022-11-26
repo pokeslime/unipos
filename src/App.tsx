@@ -17,7 +17,7 @@ export const App = () => {
         <Route path="/home" component={HomePage} />
         <Route path="/member" component={MemberPage} />
         <Route path="/contribution" component={ContributionPage} />
-        <Route path="delete" component={DeletePage} />
+        <Route path="/delete" component={DeletePage} />
   </BrowserRouter>
   );
 };

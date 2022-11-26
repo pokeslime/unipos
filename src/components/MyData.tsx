@@ -6,7 +6,7 @@ import { UserMessage } from '../types/UserMessageType'
 export const MyData = () => {
 
     //User情報を取得
-    const url = ""　//To be filled
+    const url = "http://localhost:8000"　//To be filled
     const localUserId = localStorage.getItem("userId");
     const localUserName = localStorage.getItem("name");
     const[user,setUser]=useState<User>({UserId:"",Name:"",UserPoint:0});

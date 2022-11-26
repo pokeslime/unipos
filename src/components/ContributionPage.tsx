@@ -4,7 +4,7 @@ import { ulid } from 'ulid';
 import { Menu } from './Menu';
 
 export const ContributionPage = () => {
-  const url = "" //To be filled 
+  const url = "http://localhost:8000" //To be filled 
   const sendMessageUrl = url+"/sendMessage"
 
   const localUserId: any = localStorage.getItem("userId");  
@@ -55,7 +55,7 @@ export const ContributionPage = () => {
   return (
     <div>
       <header>
-        <h1>Title</h1>
+        <h1>Unipos</h1>
         <br></br>
         <Menu />
       </header>

@@ -5,7 +5,7 @@ import { Menu } from './Menu';
 
 export const DeletePage = () => {
 
-    const url = "" //To be filled
+    const url = "http://localhost:8000" //To be filled
     const localUserId = localStorage.getItem("userId");
 
     const [sendMessage,setSendMessage] = useState<UserMessage[]>([])
@@ -25,7 +25,7 @@ export const DeletePage = () => {
     return (
         <div>
             <header>
-                <h1>Title</h1>
+                <h1>Unipos</h1>
                 <br></br>
                 <Menu />
             </header>

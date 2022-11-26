@@ -5,7 +5,7 @@ import { Menu } from './Menu';
 export const MemberPage = () => {
   
   const[users,setUsers]=useState<User[]>([])
-  const url = "" //To be filled
+  const url = "http://localhost:8000" //To be filled
   const userURL = url + "/user"
   useEffect(()=>{
     fetch(userURL)
@@ -16,7 +16,7 @@ export const MemberPage = () => {
   return (
     <div>
       <header>
-        <h1>Title</h1>
+        <h1>Unipos</h1>
         <br></br>
         <Menu />
       </header>
