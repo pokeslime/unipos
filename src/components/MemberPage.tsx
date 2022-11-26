@@ -20,7 +20,9 @@ export const MemberPage = () => {
         <br></br>
         <Menu />
       </header>
+      <br></br><br></br>
       <body>
+        <h1>メンバー</h1>
         {users.map((user)=>(
             <div key={user.UserId}>
                 <li>name:{user.Name},point:{user.UserPoint}ポイント</li>

@@ -29,13 +29,14 @@ export const DeletePage = () => {
                 <br></br>
                 <Menu />
             </header>
+            <br></br><br></br>
             <body>
                 <h1>送信したメッセージ</h1>   
                 {sendMessage.map((sendMessage) => (
                     <div key={sendMessage.MessageId}>
                         <p>To:{sendMessage.Name},Point:{sendMessage.MessagePoint}ポイント</p>
                         <p>{sendMessage.MessageText}</p>
-                        <Button href="/home" onClick={() => deleteMessage(sendMessage.MessageId)}>この貢献を削除</Button>
+                        <Button href="/home" onClick={() => deleteMessage(sendMessage.MessageId)}>このメッセージを削除</Button>
                     </div>    
                 ))}
             </body>

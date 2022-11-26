@@ -6,11 +6,9 @@ import SendIcon from '@mui/icons-material/Send';
 export const Menu = () => {
     return (
         <div>
-            <ul className='menuList'>
-                <li><Button href="/home"><HomeIcon/>ホーム</Button></li>
-                <li><Button href="/member"><GroupsIcon/>メンバー</Button></li>
-                <li><Button href="/contribution"><SendIcon/>貢献</Button></li>
-            </ul>
+            <Button href="/home"><HomeIcon/>ホーム</Button>
+            <Button href="/member"><GroupsIcon/>メンバー</Button>
+            <Button href="/contribution"><SendIcon/>送る</Button>
         </div>
     );
 };

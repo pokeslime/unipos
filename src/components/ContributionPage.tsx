@@ -59,20 +59,27 @@ export const ContributionPage = () => {
         <br></br>
         <Menu />
       </header>
+      <br></br><br></br>
+      <h1>メンバーにメッセージを送ろう！</h1>
+      <br></br>
       <body>
         <form action={sendMessageUrl} method="post" onSubmit={onSubmit}>
             <label>To:</label>
             <input type="text" name="Name" onChange={onChangeName} />
+            <p>
+            <br></br>
             <label>送るポイント:</label>
             <input type="number" name="MessagePoint" min="1" max="50" onChange={onChangePoint} required />
-            <label>メッセージ</label>
+            </p>
+            <br></br>
+            <label>メッセージ:</label>
             <input type="text" name="MessageText" onChange={onChangeText} required />
             <input type="hidden" name="MessageId" value={ulid()} />
             <input type="hidden" name="FromUserId" value={localUserId} />
             <Button href="/home" type="submit" >送信</Button>
         </form>
         <br></br>
-        <Button href="/delete">貢献の削除</Button>
+        <Button href="/delete">送信済みメッセージの削除</Button>
        </body> 
     </div>
   );

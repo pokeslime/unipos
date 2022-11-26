@@ -35,6 +35,7 @@ export const MyData = () => {
     return (
       <div>
         <h1> 現在のポイント:{user.UserPoint}</h1>
+        <br></br>
         <p>受信したメッセージ</p>
         <ul>
           {receiveMessage.map((receiveMessage)=>(
@@ -45,6 +46,7 @@ export const MyData = () => {
             </div>
           ))}
         </ul>
+        <br></br>
         <p>送信したメッセージ</p>
         <ul>
             {sendMessage.map((sendMessage)=> (
