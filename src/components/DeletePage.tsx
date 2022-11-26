@@ -9,7 +9,7 @@ export const DeletePage = () => {
     const localUserId = localStorage.getItem("userId");
 
     const [sendMessage,setSendMessage] = useState<UserMessage[]>([])
-    const sendMessageUrl= url+ "/sendMessage?UserId=" + localUserId
+    const sendMessageUrl= url+ "/sendMessage?userId=" + localUserId
     
     useEffect(()=>{
         fetch(sendMessageUrl)
@@ -17,7 +17,7 @@ export const DeletePage = () => {
         .then((json)=>setSendMessage(json))},[]);
 
     const deleteMessage = (messageId: any) => {
-        const deleteMessageUrl = url + "/sendMessage?MessageId=" + messageId
+        const deleteMessageUrl = url + "/sendMessage?messageId=" + messageId
         console.log(localUserId)
         fetch(deleteMessageUrl, { method: 'DELETE' })
     };

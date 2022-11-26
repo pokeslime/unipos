@@ -8,8 +8,9 @@ export const MyData = () => {
     //User情報を取得
     const url = ""　//To be filled
     const localUserId = localStorage.getItem("userId");
+    const localUserName = localStorage.getItem("name");
     const[user,setUser]=useState<User>({UserId:"",Name:"",UserPoint:0});
-    const URL = url+ "/user?UserId=" + localUserId;  //クエリパラメータ　Goで対応
+    const URL = url+ "/user?userId=" + localUserId;  //クエリパラメータ　Goで対応
     useEffect(() => {
         fetch(URL)
     　　.then(response=> {return response.json()})
@@ -17,7 +18,7 @@ export const MyData = () => {
   
     //受信済みメッセージ　
     const [receiveMessage,setReceiveMessage] = useState<UserMessage[]>([]);
-    const ReceiveUserUrl= url + "/receiveMessage?UserId=" + localUserId; //クエリパラメータ Goで対応
+    const ReceiveUserUrl= url + "/receiveMessage?name=" + localUserName; //クエリパラメータ Goで対応
     useEffect(() =>{
         fetch(ReceiveUserUrl)
     　　.then((response:any)=> {return response.json()})
@@ -25,7 +26,7 @@ export const MyData = () => {
   
     //送信済みメッセージ 
     const [sendMessage,setSendMessage] = useState<UserMessage[]>([])
-    const SendMessageUrl= url + "/sendMessage?UserId=" + localUserId
+    const SendMessageUrl= url + "/sendMessage?userId=" + localUserId
     useEffect(()=>{
         fetch(SendMessageUrl)
         .then((response:any)=> {return response.json()})

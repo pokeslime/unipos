@@ -2,7 +2,6 @@ import { Button } from '@mui/material'
 import React, { useState, ChangeEvent } from 'react'
 import { ulid } from 'ulid';
 import { Menu } from './Menu';
-import { UserMessage } from '../types/UserMessageType';
 
 export const ContributionPage = () => {
   const url = "" //To be filled 
@@ -37,11 +36,10 @@ export const ContributionPage = () => {
           body: JSON.stringify({
             MessageId: ulid(),
             FromUserId: localUserId,
-            ToUserId: "",  //To be filled
             MessagePoint: point,
-            MessageText: text,
-            UserId: localUserId,
-            Name: name
+            UserId: localUserId,　//ここは送り主のUserId
+            Name: name,        //ここ送り先の相手の名前なの注意
+            MessageText: text
           }),
         }); 
         if (!result.ok) {
@@ -64,7 +62,7 @@ export const ContributionPage = () => {
       <body>
         <form action={sendMessageUrl} method="post" onSubmit={onSubmit}>
             <label>To:</label>
-            <input type="text" name="ToUserId" onChange={onChangeName} />
+            <input type="text" name="Name" onChange={onChangeName} />
             <label>送るポイント:</label>
             <input type="number" name="MessagePoint" min="1" max="50" onChange={onChangePoint} required />
             <label>メッセージ</label>

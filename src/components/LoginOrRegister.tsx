@@ -3,7 +3,7 @@ import { BrowserRouter, Link } from 'react-router-dom';
 export const LoginOrRegister = () => {
     return (
         <BrowserRouter>
-          <h1>Title</h1>
+          <h1>Unipos</h1>
           <ul>
             <li>
                 <Link to="/login">ログイン</Link>
