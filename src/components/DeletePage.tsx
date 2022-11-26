@@ -31,7 +31,9 @@ export const DeletePage = () => {
             </header>
             <br></br><br></br>
             <body>
-                <h1>送信したメッセージ</h1>   
+                <h1>メッセージの削除</h1>
+                <br></br>
+                <h2>送信したメッセージ</h2>   
                 {sendMessage.map((sendMessage) => (
                     <div key={sendMessage.MessageId}>
                         <p>To:{sendMessage.Name},Point:{sendMessage.MessagePoint}ポイント</p>

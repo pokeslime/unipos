@@ -20,6 +20,9 @@ export const LoginPage = () => {
     return (
       <>
       <h1 style={{ color: "#0000ff" }}>ログイン</h1>
+      <br></br><br></br>
+      <h2>ユーザーの選択</h2>
+      <br></br>
       {users.map((u)=>(
         <div key={u.UserId}>
           <form>
